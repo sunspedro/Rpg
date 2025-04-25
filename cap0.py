@@ -97,6 +97,7 @@ def introElarith(personagem):
         print(Fore.LIGHTGREEN_EX + f"\n{personagem.nome}:",Fore.RESET,"Não entendi qual a necessidade de uma feiticeira para uma simples missão...") 
         print(Fore.LIGHTRED_EX + "Zharik:",Fore.RESET,f"Ninguem disse que ela sera sua companheira {personagem.nome}, ela tem outra missão mais importante.")
         print(Fore.LIGHTRED_EX + "Elarith:",Fore.RESET,"Nos livros tambem dizia que arrogancia era um ponto forte seu...")
+        memorias = {"respostaErradaElarith": True}
 
     print("Zharik te entrega um mapa da floresta que foi resgatado de um cadáver de explorador e diz que você está liberado para a missão.")
     print(Fore.LIGHTBLUE_EX + "\nMemória atualizada: Elarith, uma feiticeira forte de Khaldros, mas quão forte ela é? E qual sua missão?\n")
