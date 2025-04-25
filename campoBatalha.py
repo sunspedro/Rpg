@@ -79,5 +79,11 @@ def florestaBatalha(personagem):
 def florestaFinal(personagem):
     monstros = criarMonstros()
 
-    monstroEscolhido = monstros["florestaBoss"]
+    monstroEscolhido = random.choice(monstros["florestaBoss"])
+    monstroEscolhido.batalha(personagem)
+
+def florestaFinalDificil(personagem):
+    monstros = criarMonstros()
+
+    monstroEscolhido = random.choice(monstros["florestaBossDificil"])
     monstroEscolhido.batalha(personagem)
