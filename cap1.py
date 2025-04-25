@@ -57,6 +57,7 @@ def vilarejo(personagem):
                 print("Por ter a lingua maior que a boca você é obrigado a se retirar da taberna, da cidade e seguir caminho.")      
                 
                 print(Fore.LIGHTBLUE_EX +"\nMemória atualizada:Pelo visto os refugiados de Elyvaris não gostam muito de quem foi responsável pela dizimação do páis deles, essa história não contam nos seus livros...")
+                memorias = {"respostaErradaVess": True}
 
                 print("Você acaba obrigado a seguir caminho.")
                 planicesNoite(personagem)
@@ -83,3 +84,6 @@ def fasePlanicies(personagem):
     cap1Intro(personagem)
     vilarejo(personagem)
     cap1Final(personagem)
+
+    #acho que da pra desenvolver melhor esse capitulo / colocar algo relacionado a bandidos, o cap2 já ta com mais de 120 linhas e esse fechou em 87
+    #quem sabe usar o sistema de quadro de missões agora já criar um arquivo pra ele dai
