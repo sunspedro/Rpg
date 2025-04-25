@@ -79,19 +79,32 @@ def florestaReiOptions(personagem):
         reiniciar_jogo(personagem)           #vitoria = queimar vila ou ir embora e falar a loc | derrota = elartih salva vc e dependendo da memoria ela faz tua cova ou te ajuda
     
     elif decisao == "2":
-        print("Você solta o Goblin e ele sai correndo.")
+        print("\nVocê solta o Goblin e ele sai correndo.")
         print(Fore.LIGHTRED_EX + "???", Fore.RESET, "Meu nome é Zarzug, sou o rei, se era isso que você estava procurando.")
         print(Fore.LIGHTRED_EX + "Zarzug:", Fore.RESET, "Gostaria de pedir que vá embora, estamos bem resolvidos aqui.")
-        print("Você vê pessoas e goblins na janela, não consegue entender direito o porquê estão todos juntos.")
+        print("Você vê pessoas e goblins na janela, mais proximo a você uma criança segurando a mão de um goblin idoso, não consegue entender direito o porquê estão todos juntos.")
         
-    escolha = input("1. Estou aqui para libertar todos os que você manteve presos.\n2. Chegou a hora de acabar com o reinado de medo que você impôs.\nO que você decide fazer? ")
+    escolha = input("1. Estou aqui para libertar todos os que você manteve presos.\n2. Vamos acabar com isso de uma vez por todas.\nO que você decide fazer?")
+
+    if escolha == "1":
+        print(Fore.LIGHTRED_EX + "\nZarzug:", Fore.RESET, "Libertar? Hahaha.")
+        print("Você escuta todos a sua volta dando risada com o que você acabou de dizer.")
+        print(Fore.LIGHTRED_EX + "Zarzug:", Fore.RESET, "Todos estão aqui se refugiando bravo guerreiro, nossa comunidade é boa e não queremos guerra com ninguem.")
+        print(Fore.LIGHTRED_EX + "Zarzug:", Fore.RESET, "A verdadeira tirania é a do rei que você serve.")
+        print("Você olha em volta e repara nos olhares de desgosto ao Zarzug citar o rei.")
+
+        escolha2 = input("1.Realmente Zarzug, mas você sabe que tenho uma missão a cumprir.\n2.Não é problema meu o que você acha ou deixa de achar, minha missão sera cumprimida seja Deus ou Diabo me enviando.")
+        
+    
+    elif escolha == "2":
+        print("teste")
 
 
 def faseFloresta(personagem):
-    monstro = criarMonstros()
-
     florestaIntro(personagem)
     florestaBatalhas(personagem)
     florestaIntroRei(personagem)
     florestaReiOptions(personagem)
     florestaFinal(personagem)
+
+# print(Fore.LIGHTRED_EX + "Zarzug:", Fore.RESET, "")   
