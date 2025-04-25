@@ -2,7 +2,7 @@ from colorama import Fore, Style, init
 import random
 from monstros import criarMonstros
 from memorias import memorias
-from campoBatalha import planicesDia, planicesNoite, florestaBatalha, florestaFinal
+from campoBatalha import planicesDia, planicesNoite, florestaBatalha, florestaFinal, florestaFinalDificil
 
 init(autoreset=True)
 
@@ -45,7 +45,7 @@ def florestaIntro(personagem):
 
 def florestaBatalhas(personagem):
     decisao = input("\n1. Prosseguir história\n2. Voltar para a planície\n3. Voltar para a planície noturna\nOpção: ")
-    
+    pass  
     if decisao == "1":
         florestaBatalha(personagem)
     elif decisao == "2":
@@ -74,32 +74,39 @@ def florestaReiOptions(personagem):
         print("Só um amador pra cair em uma armadilha? Na sede de ódio você esquece do resto do ambiente.")
         print("Um tronco com espinhos bate diretamente nas suas costas, você é arremessado para o pé do Goblin.")
         print(Fore.LIGHTRED_EX + "???:", Fore.RESET, "Eu sou um rei piedoso, mas não vejo um pingo de compaixão no seu coração.")
-        print("O Rei coloca o pé na sua cabeça, apesar da pressão você escuta gritos de felicidade dos goblins em volta, o rei explode sua cabeça.")
-        print(Fore.LIGHTWHITE_EX + "\nFim.") #dificultar a batalha x boss e colocar ela aqui
-        reiniciar_jogo(personagem)           #vitoria = queimar vila ou ir embora e falar a loc | derrota = elartih salva vc e dependendo da memoria ela faz tua cova ou te ajuda
-    
+        print("O rei te chuta para trás e então começa o embate que vai definir que tem a razão")
+        
+        florestaFinalDificil(personagem)    
+
+        # reiniciar_jogo(personagem) Colocar if pra verificar se venceu          
+        # #vitoria = queimar vila ou ir embora e falar a loc | derrota = elartih salva vc e dependendo da memoria ela faz tua cova ou te ajuda
+        # se só sair elarith destruiu o acampamento (voce n sabe q foi ela)  criar uma def e reutilizar                                                      
+        # se queima a floresta a missão é um fracasso pq a filha do rei ta ali
     elif decisao == "2":
-        print("\nVocê solta o Goblin e ele sai correndo.")
-        print(Fore.LIGHTRED_EX + "???", Fore.RESET, "Meu nome é Zarzug, sou o rei, se era isso que você estava procurando.")
-        print(Fore.LIGHTRED_EX + "Zarzug:", Fore.RESET, "Gostaria de pedir que vá embora, estamos bem resolvidos aqui.")
-        print("Você vê pessoas e goblins na janela, mais proximo a você uma criança segurando a mão de um goblin idoso, não consegue entender direito o porquê estão todos juntos.")
-        
-    escolha = input("1. Estou aqui para libertar todos os que você manteve presos.\n2. Vamos acabar com isso de uma vez por todas.\nO que você decide fazer?")
+        print("\nVocê afrouxa os dedos e solta o pequeno goblin. Ele não olha para trás apenas corre.")
+        print(Fore.LIGHTRED_EX + "???", Fore.RESET, "Zarzug... é como me chamam. Se busca um rei, acho que encontrou um.")
+        print(Fore.LIGHTRED_EX + "Zarzug:", Fore.RESET, "Não quero confronto. Apenas vá. Já suportamos mais do que deveríamos.")
+        print("Do lado de fora, rostos espiam pelas janelas. Crianças humanas e goblins dividem o mesmo espaço, o mesmo medo. Uma pequena mão agarra com força a de um ancião de pele esverdeada.")
+        print("Você não entende... ou talvez tema entender demais o que se passa ali.")
 
-    if escolha == "1":
-        print(Fore.LIGHTRED_EX + "\nZarzug:", Fore.RESET, "Libertar? Hahaha.")
-        print("Você escuta todos a sua volta dando risada com o que você acabou de dizer.")
-        print(Fore.LIGHTRED_EX + "Zarzug:", Fore.RESET, "Todos estão aqui se refugiando bravo guerreiro, nossa comunidade é boa e não queremos guerra com ninguem.")
-        print(Fore.LIGHTRED_EX + "Zarzug:", Fore.RESET, "A verdadeira tirania é a do rei que você serve.")
-        print("Você olha em volta e repara nos olhares de desgosto ao Zarzug citar o rei.")
+        escolha = input("1. Vim libertar aqueles que mantêm presos, mesmo que não saibam disso.\n""2. Já passou da hora. Que essa história termine, de um jeito ou de outro.\n""O que você escolhe?\n")
 
-        escolha2 = input("1.Realmente Zarzug, mas você sabe que tenho uma missão a cumprir.\n2.Não é problema meu o que você acha ou deixa de achar, minha missão sera cumprimida seja Deus ou Diabo me enviando.")
-        
-    
-    elif escolha == "2":
-        print("teste")
+        if escolha == "1":
+            print(Fore.LIGHTRED_EX + "\nZarzug:", Fore.RESET, "Libertar...? Hahaha...")
+            print("O som das risadas ao redor não é de deboche, mas de uma dor cansada — como se há muito tempo já tivessem perdido a esperança.")
+            print(Fore.LIGHTRED_EX + "Zarzug:", Fore.RESET, "Todos aqui estão apenas... tentando sobreviver, bravo guerreiro. Somos uma sombra de um povo que um dia sonhou com a paz.")
+            print(Fore.LIGHTRED_EX + "Zarzug:", Fore.RESET, "A tirania que conhecemos não vem de monstros... mas de tronos e coroas.")
+            print("Você observa os rostos ao redor — não há raiva, apenas uma tristeza silenciosa quando o nome do rei é pronunciado.")
 
+            escolha2 = input("1. Você tem razão, Zarzug... mas meu fardo não muda. A missão continua, mesmo que me afunde junto com ela.\n""2. Pouco me importa o que pensam meu caminho está traçado, mesmo que me leve à ruína.\n")
 
+            if escolha2 == "1":
+                print("")   #conversa com zarzug -> ele fala que não roubou nada e conta a verdade sobre a missão / a filha do rei esta ali
+                            #o Rei pode te dar algo útil seja item, benção... pode ter uma loja goblin que paga mais caro por coisas "comuns" fora da floresta
+                            #voce sempre sera bem vindo / pode voltar
+                      
+            elif escolha2 == "2":
+                pass #batalha normal, mas mesmas opções de queimar floresta/ sair e se só sair elarith destruiu o acampamento (voce n sabe q foi ela)
 def faseFloresta(personagem):
     florestaIntro(personagem)
     florestaBatalhas(personagem)
