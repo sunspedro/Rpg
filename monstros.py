@@ -88,16 +88,21 @@ class Monstro:
 def criarMonstros():
     # Planície
     slime = Monstro("Slime", 4, 18, 2)
+    porco = Monstro("Porco", 5, 20, 3)
     cobra = Monstro("Cobra", 6, 22, 3)
-
+    
     # Planície Noturna
     javali = Monstro("Javali", 6, 24, 5)
     bandido = Monstro("Bandido", 7, 28, 7)
+    caçadorRecompensa = ("Caçador de recompensas", 9,30,7)
 
     # Floresta
     goblin = Monstro("Goblin", 8, 30, 9)
     goblinLanceiro = Monstro("Goblin Lanceiro", 9, 34, 9)
-    goblinRei = Monstro("Rei Goblin", 11, 55, 25)
+    orc = Monstro("Orc", 13, 40, 10)
+
+    goblinRei = Monstro("Rei Goblin", 15, 60, 25)
+    goblinReiDificil = Monstro("Rei Goblin", 17,80,25)
 
     # darama
     escorpiao = Monstro("Escorpião Gigante", 10, 45, 16)
@@ -106,47 +111,50 @@ def criarMonstros():
     #dentro da piramide
     ladraoDeTumba = Monstro("Ladrão de tumba", 13, 48, 20)
     mumia = Monstro("Múmia Antiga", 12, 50, 22)
-    dragaoReiDeserto = Monstro("Dragão Rei de Areia", 15, 70, 40)
+    dragaoReiDeserto = Monstro("Sarithar, o Eco do Deserto", 15, 70, 40)
 
     # khaldrós
     lobo = Monstro("Lobo do Gelo", 14, 55, 22)
     elementalDeGelo = Monstro("Elemental de Gelo", 15, 60, 25)
     elfoDasMontanhas = Monstro("Elfo das Montanhas", 16, 65, 28)
+    
+    #dentro da caverna
     morcegoGigante = Monstro("Morcego Gigante", 17, 68, 30)
     golem = Monstro("Golem de Neve", 16, 90, 35)
-    dragaoReiGelo = Monstro("Dragão Rei Gelo", 18, 140, 65)
+    dragaoReiGelo = Monstro("Glavendral, o Sussurro das Geleiras", 18, 140, 65)
 
-    # vulcao ... 
+    # chegando em  Thar'Khal (vulcao)
     salamandra = Monstro("Salamandra", 18, 72, 37)
     trollDeCinzas = Monstro("Troll de Cinzas", 19, 78, 40)
     diabreteDeFumaça = Monstro("Diabrete de fumaça", 20, 80, 52)
-    #dentro do vulcao
+    #na subida até o topo
     dragaoBebe = Monstro("Dragão Bebê", 18, 85, 44)
     elemental = Monstro("Elemental de Fogo", 20, 95, 47)
-    dragraoNegro = Monstro("Dragão Rei do Fogo", 23, 180, 100)
+    dragraoReiVulcao = Monstro("Volgareth, a Ira das Chamas", 23, 180, 100)
 
-    # cemiterio ...
+    # Vale dos Lamentos (cemiterio)
     esqueleto = Monstro("Esqueleto Guerreiro", 20, 90, 55)
     fantasma = Monstro("Fantasma Sombrio", 22, 100, 57)
     necromante = Monstro("Necromante", 23, 105, 60)
     vampiro = Monstro("Lorde Vampiro", 24, 110, 65)
-    dragaoReiMorto = Monstro("Dragão Rei Morto", 30, 200, 150)
+    dragaoReiCemiterio = Monstro("Nyxarion, o Último Véu", 30, 200, 150)
 
     # Boss Final
     bossFinal = Monstro("Zharik", 30, 300, 35)
 
     return {
-        "planiceDia": [slime, cobra],
-        "planiceNoite": [javali, bandido],
-        "floresta": [goblin, goblinLanceiro],
+        "planiceDia": [slime, cobra, porco],
+        "planiceNoite": [javali, bandido, caçadorRecompensa],
+        "floresta": [goblin, goblinLanceiro, orc],
         "florestaBoss": [goblinRei],
+        "florestaBossDificil": [goblinReiDificil],
         "deserto": [escorpiao, escaravelho, hiena, ladraoDeTumba, mumia],
         "desertoBoss":[dragaoReiDeserto],
         "gelo": [lobo, elementalDeGelo, elfoDasMontanhas, morcegoGigante, golem],
         "geloBoss": [dragaoReiGelo],
         "vulcao": [salamandra, trollDeCinzas, diabreteDeFumaça, dragaoBebe, elemental],
-        "vulcaoBoss": [dragraoNegro],
+        "vulcaoBoss": [dragraoReiVulcao],
         "cemiterio": [esqueleto, fantasma, necromante, vampiro],
-        "cemiterioBoss": [dragaoReiMorto],
+        "cemiterioBoss": [dragaoReiCemiterio],
         "boss": [bossFinal]
     }
